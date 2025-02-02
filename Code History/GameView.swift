@@ -1,20 +1,20 @@
 //
-//  ContentView.swift
+//  GameView.swift
 //  Code History
 //
-//  Created by Marcin Matusiak on 1/1/25.
+//  Created by Marcin Matusiak on 2/2/25.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct GameView: View {
     
     let question = Question(
             questionText: "What was the first computer bug?",
             possibleAnswers: ["Ant", "Beetle", "Moth", "Fly"],
             correctAnswerIndex: 2)
     
-    @State var mainColor = Color(red: 20/255, green: 28/255, blue: 58/255)
+    @State var mainColor = GameColor.main
     
     var body: some View {
         ZStack{
@@ -38,10 +38,8 @@ struct ContentView: View {
                       }) {
                         ChoiceTextView(choiceText: question.possibleAnswers[answerIndex])
                       }
-                      
                   }
                 }
-
             }
         }
         .foregroundColor(.white)
@@ -49,5 +47,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    GameView()
 }
